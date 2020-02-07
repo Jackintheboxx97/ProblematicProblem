@@ -1,16 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Threading;
 
-ProblematicProblem
+
+
+namespace ProblematicProblem
 {
-    Program class
+  public class Program
     {
         Random rng;        
         static bool cont = true;
-        static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" }
+        static List<string> activities = new List<string>() { "Movies", "Paintball", "Bowling", "Lazer Tag", "LAN Party", "Hiking", "Axe Throwing", "Wine Tasting" };
 
         static void Main(string[] args)
         {
-            Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ")
-            bool cont = bool.Parse(Console.ReadLine());
+            Console.Write("Hello, welcome to the random activity generator! \nWould you like to generate a random activity? yes/no: ");
+            cont = bool.Parse(Console.ReadLine());
 
             Console.WriteLine();
 
@@ -20,7 +25,7 @@ ProblematicProblem
             Console.WriteLine();
 
             Console.Write("What is your age? ");
-            int userAge = Console.ReadLine();
+            var userAge = int.Parse(Console.ReadLine());
 
             Console.WriteLine();
 
@@ -47,7 +52,7 @@ ProblematicProblem
 
                     activities.Add(userAddition);
 
-                    foreach (string activity activities)
+                    foreach (string activity in activities)
                     {
                         Console.Write($"{activity} ");
                         Thread.Sleep(250);
@@ -55,7 +60,7 @@ ProblematicProblem
 
                     Console.WriteLine();
                     Console.WriteLine("Would you like to add more? yes/no: ");
-                    string addToList = bool.Parse(Console.ReadLine());
+                    var addoList = bool.Parse(Console.ReadLine());
                 }
             }
             
@@ -69,9 +74,9 @@ ProblematicProblem
                     Thread.Sleep(500);
                 }
 
-                Console.WriteLine()
+                Console.WriteLine();
 
-                Console.Write("Choosing your random activity");
+                   Console.Write("Choosing your random activity");
 
                 for (int i = 0; i < 9; i++)
                 {
@@ -79,28 +84,34 @@ ProblematicProblem
                     Thread.Sleep(500);
                 }
 
-                Console.WriteLine()
+                Console.WriteLine();
 
-                int randomNumber = rng.Next(activities.Count);
+                var randomNumber = (activities.Count);
 
-                string randomActivity = activities[randomNumber]
+                string randomActivity = activities[randomNumber];
+                 
+                 var randomactivity = activities[randomNumber];
+                
+                int randomnumber = (activities.Count);
 
-                if (userAge > 21 && randomActivity == "Wine Tasting")
+                bool v = userAge > 21;
+                if (v && randomActivity == "Wine Tasting")
+
                 {
                     Console.WriteLine($"Oh no! Looks like you are too young to do {randomActivity}");
                     Console.WriteLine("Pick something else!");
 
                     activities.Remove(randomActivity);
+                    
+                    
 
-                    string randomNumber = rng.Next(activities.Count);
-
-                    string randomActivity = activities[randomNumber];
+                    
                 }
 
-                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ")
-                ConsoleWriteLine();
-                bool cont = bool.Parse(Console.ReadLine());
+                Console.Write($"Ah got it! {randomActivity}, your random activity is: {userName}! Is this ok or do you want to grab another activity? Keep/Redo: ");
+                Console.WriteLine();
+                bool Cont = bool.Parse(Console.ReadLine());
             }
         }
     }
-}}
+}
